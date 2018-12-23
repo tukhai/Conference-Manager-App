@@ -3,36 +3,7 @@ const reader = require('./functions-library/reader');
 
 const cfgArg     = ['--cfg', '-c'];
 const cfgLength  = 2;
-const cfgDefault = {
-    timeUnit: 'min',
-    lightning: {
-        symbol: 'lightning',
-        timeCost: 5,
-        /*
-        merge: {
-            break: 'Have a rest...',
-            timeCost: 10
-        }
-        */
-    },
-    limit: {
-    },
-    session: {
-        section: {
-            split: '-',
-            default: [
-                '09:00-12:00-Lunch',
-                '13:00-17:00-Networking Event'
-            ]
-        },
-        limit: {
-            'Networking Event': {noEarlier: '16:00', noLater: '17:00'}
-        }
-    },
-    track: {
-        title: 'Track'
-    }
-};
+const cfgDefault = './config.js';
 
 // Handle command line parameters, support input of multiple files, support program options
 let idx;
@@ -51,11 +22,7 @@ if (idx != -1) {
     cfg = cfgDefault;
 }
 
-if (typeof cfg == "string") {
-    global.config = require(cfg);
-} else {
-    global.config = cfg;
-}
+global.config = require(cfg);
 
 // Get the file content and do further processing
 let files = util.path.getRightPath(argv);
