@@ -1,20 +1,5 @@
-const path = require('path');
+const util   = require('./functions-library/util');
 const reader = require('./functions-library/reader');
-
-let util = {};
-
-util.path = {
-    getRightPath: paths => {
-        let rightPath = [];
-
-        paths.forEach(_path => {
-            let tmp = path.relative(__dirname, _path);
-            rightPath.push(path.join(__dirname, tmp));
-        });
-
-        return rightPath;
-    }
-};
 
 let argv = process.argv.slice(2);
 
