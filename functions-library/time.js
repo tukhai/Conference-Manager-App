@@ -64,4 +64,44 @@ time.elapse = (time, min) => {
     return `${oTime.hr}:${oTime.min}`;
 }
 
+// Convert from 24 hours to 12 hours, such as 14:00 is equivalent to 02:00PM
+time.militaryTimeTo12HrsClock = time => {
+    const AM = 'AM';
+    const PM = 'PM';
+    
+    let oTime = str2Obj(time);
+    let tag = '';
+
+    if (oTime.hr >= 0 && oTime.hr < 12) {
+        oTime.hr = `${oTime.hr}`;
+        tag = AM;
+    } else if (oTime.hr >= 12 && oTime.hr < 24) {
+        if (oTime.hr === 12) {
+            oTime.hr = 12;
+        } else {
+            oTime.hr = `${oTime.hr - 12}`;
+        }
+        tag = PM;
+    } else {
+        throw new Error('Error[Illegal time]' + ` Time[${time}]`);
+    }
+
+    if (oTime.min < 10) oTime.min = `0${oTime.min}`;
+    if (oTime.hr < 10) oTime.hr = `0${oTime.hr}`;
+
+    return `${oTime.hr}:${oTime.min}${tag}`;
+}
+
+// Determine whether time point A exceeds time point B. If 14:00 exceeds 13:00, it returns true, otherwise it returns false.
+time.isExcess = (current, noEarlier) => {
+    let oCurrent = str2Obj(current);
+    let oNoEarlier = str2Obj(noEarlier);
+
+    if (oCurrent.hr > oNoEarlier.hr) return true;
+    else if (oCurrent.hr === oNoEarlier.hr) {
+        if (oCurrent.min > oNoEarlier.min) return true;
+        else return false;
+    } else return false;
+}
+
 module.exports = time;
