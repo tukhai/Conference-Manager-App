@@ -15,6 +15,16 @@ util.array = {
         });
 
         return result;
+    },
+    // Clean up the invalid elements of the array and return a new array. If you pass [1,9,,9,2,,10,,,21], it will return [1,9,9,2,10,21]
+    clear: ary => {
+        let newAry = [];
+
+        ary.forEach(item => {
+            newAry.push(item);
+        });
+
+        return newAry;
     }
 };
 

@@ -42,4 +42,26 @@ time.duration = (begin, end) => {
     return ((oEnd.hr - oBegin.hr) * 60) + beginMinOffset - endMinOffset;
 }
 
+// Given a point in time, calculate the time point after a given number of minutes, such as 19:00 and 15 minutes to 19:15
+time.elapse = (time, min) => {
+    let oTime = str2Obj(time);
+
+    oTime.min += min;
+
+    while (oTime.min > 59 || oTime.min < 0) {
+        if (oTime.min > 59) {
+            oTime.min -= 60;
+            oTime.hr += 1;
+        } else if (oTime.min < 0) {
+            oTime.min += 60;
+            oTime.hr -= 1;
+        }
+    }
+
+    if (oTime.min === 0) oTime.min = '00';
+    if (oTime.hr > 23) console.log('Warning[More than one day]');
+
+    return `${oTime.hr}:${oTime.min}`;
+}
+
 module.exports = time;

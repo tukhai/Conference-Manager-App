@@ -2,6 +2,7 @@ const util   = require('./functions-library/util');
 const track  = require('./functions-library/track');
 const reader = require('./functions-library/reader');
 const ai     = require('./functions-library/ai');
+const time   = require('./functions-library/time');
 
 const cfgArg     = ['--cfg', '-c'];
 const cfgLength  = 2;
@@ -44,6 +45,29 @@ reader.getTalkList(files).then(talkList => {
             idxs = [];
             talks = [];
         }
+
+        let mark = session.begin;
+        idxs.forEach(idx => {
+            let talk = talks[idx];
+            talk.scheduled = mark;
+            mark = time.elapse(mark, talk.timeCost);
+
+            if (talk.type === 'merged') {
+                let tmp = talk.scheduled;
+                talk.merged.forEach((item, idx) => {
+                    item.scheduled = tmp;
+                    tmp = time.elapse(tmp, item.timeCost);
+                    if ((idx+1) === talk.merged.length) talk.relaxTime = tmp;
+                });
+            }
+
+            session.talks.push(talk);
+            session.timeUsed += talk.timeCost;
+            session.timeRemain -= talk.timeCost;
+            delete talks[idx];
+        });
+
+        talks = util.array.clear(talks);
 
         console.log("--idxs--", idxs);
     });
