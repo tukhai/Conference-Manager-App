@@ -39,11 +39,9 @@ reader.getTalkList(files).then(talkList => {
     
     // Keep all activities on schedule
     while (talks.length && (maxDays === true ? true : tracks.length < maxDays)) {
-        // console.log("--0--", track.generator(0));
         this.track = track.generator(tracks.length + 1);
 
         this.track.sessions.forEach((session, INDEX) => {
-            // console.log(INDEX, "--session--", session);
 
             // The problem is summarized as the 0-1 Knapsack problem, and the appropriate activities are scheduled to the appropriate time period through dynamic programming.
             let idxs = ai.dp.kp.zeroOne(talks, session.timeRemain);
@@ -80,8 +78,6 @@ reader.getTalkList(files).then(talkList => {
         if (this.track.timeUsed) tracks.push(this.track);
     }
 
-    // console.log("--talks--", talks);
-    // console.log("---tracks---", tracks);
     track.print(tracks);
 
 }).catch(err => {
