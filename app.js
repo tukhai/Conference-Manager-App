@@ -98,7 +98,7 @@ reader.getTalkList(files).then(talkList => {
     this.track.sessions.forEach((session, INDEX) => {
         // console.log(INDEX, "--session--", session);
 
-        // The problem is summarized as the 0-1 backpack problem, and the appropriate activities are scheduled to the appropriate time period through dynamic programming.
+        // The problem is summarized as the 0-1 Knapsack problem, and the appropriate activities are scheduled to the appropriate time period through dynamic programming.
         let idxs = ai.dp.kp.zeroOne(talks, session.timeRemain);
         if (idxs[0] === undefined && idxs.length != 0) {
             idxs = [];
