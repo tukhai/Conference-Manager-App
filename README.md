@@ -1,6 +1,6 @@
 # Conference-Manager-App
 
-<h1>PROBLEMS</h1><br>
+<h2>PROBLEMS</h2><br>
 You are planning a big programming conference and have received many proposals which have passed the initial screen process but you're having trouble fitting them into the time constraints of the day. There are so many possibilities! So you write a program to do it for you.<br>
 The conference has multiple tracks each of which has a morning and afternoon session.<br>
 Each session contains multiple talks.<br>
@@ -57,17 +57,20 @@ Track 2:<br>
 04:00PM Rails for Python Developers lightning<br>
 05:00PM Networking Event<br>
 
-<br><br>
+<br>
 ###############################################
-<br><br>
+<br>
 
-<h1>PROBLEMS APPROACH</h1><br>
+<h2>PROBLEMS APPROACH</h2><br>
 - Using Dynamic Programming to fill each session.<br>
 - Applying Dynamic Programming 0-1 Knapsack problem: for each item:<br>
 nbsp; nbsp; nbsp; nbsp; weight = talk length<br>
 nbsp; nbsp; nbsp; nbsp; value = talk length<br>
 nbsp; nbsp; nbsp; nbsp; requirement is to maximize value, so that weight(talk length) < session duration (3 hours morning, 4 hours afternoon)
 
-<br><br><br>
+<br><br>
 
-<h1>HOW TO INSTALL</h1><br>
+<h2>HOW TO CLONE AND RUN PROJECT</h2><br>
+$ git clone https://github.com/tukhai/Conference-Manager-App.git<br>
+$ cd Conference-Manager-App<br>
+$ node app.js resources/source.txt<br>
