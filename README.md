@@ -71,7 +71,7 @@ nbsp; nbsp; nbsp; nbsp; requirement is to maximize value, so that weight(talk le
 <br><br>
 
 <h3>3/ HOW TO CLONE AND RUN PROJECT</h3>
-$ git clone https://github.com/tukhai/Conference-Manager-App.git<br>
+$ git clone https://<span></span>github.com/tukhai/Conference-Manager-App.git<br>
 $ cd Conference-Manager-App<br>
 $ node app.js resources/source.txt<br>
 <br>
@@ -80,3 +80,8 @@ $ node app.js resources/source1.txt<br>
 $ node app.js resources/source2.txt<br>
 $ node app.js resources/source3.txt<br>
 etc.
+
+<br><br>
+
+<h3>4/ WEB VERSION</h3>
+To be continue..
