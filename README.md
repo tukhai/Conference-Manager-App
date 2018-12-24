@@ -1,6 +1,6 @@
 # Conference-Manager-App
-
-<h2>PROBLEMS</h2><br>
+<br>
+<h3>1/ PROBLEM</h3>
 You are planning a big programming conference and have received many proposals which have passed the initial screen process but you're having trouble fitting them into the time constraints of the day. There are so many possibilities! So you write a program to do it for you.<br>
 The conference has multiple tracks each of which has a morning and afternoon session.<br>
 Each session contains multiple talks.<br>
@@ -61,7 +61,7 @@ Track 2:<br>
 ###############################################
 <br>
 
-<h2>PROBLEMS APPROACH</h2><br>
+<h3>2/ PROBLEMS APPROACH</h3>
 - Using Dynamic Programming to fill each session.<br>
 - Applying Dynamic Programming 0-1 Knapsack problem: for each item:<br>
 nbsp; nbsp; nbsp; nbsp; weight = talk length<br>
@@ -70,7 +70,13 @@ nbsp; nbsp; nbsp; nbsp; requirement is to maximize value, so that weight(talk le
 
 <br><br>
 
-<h2>HOW TO CLONE AND RUN PROJECT</h2><br>
+<h3>3/ HOW TO CLONE AND RUN PROJECT</h3>
 $ git clone https://github.com/tukhai/Conference-Manager-App.git<br>
 $ cd Conference-Manager-App<br>
 $ node app.js resources/source.txt<br>
+<br>
+User can put the list of proposal talks into /resources folder and run the same node command:<br>
+$ node app.js resources/source1.txt<br>
+$ node app.js resources/source2.txt<br>
+$ node app.js resources/source3.txt<br>
+etc.
