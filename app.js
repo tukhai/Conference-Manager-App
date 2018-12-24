@@ -82,39 +82,7 @@ reader.getTalkList(files).then(talkList => {
 
     // console.log("--talks--", talks);
     // console.log("---tracks---", tracks);
-    tracks.forEach((track, idx) => {
-        console.log(`${global.config.track.title} ${idx+1}:`);
-        track.sessions.forEach(session => {
-            session.talks.forEach(talk => {
-                if (talk.type && talk.type === 'merged') {
-                    talk.merged.forEach(data => {
-                        console.log(`${time.militaryTimeTo12HrsClock(data.scheduled)} ${data.title} ${data.lightning}`);
-                    });
-                    console.log(`${time.militaryTimeTo12HrsClock(talk.relaxTime)} ${global.config.lightning.merge.break} ${global.config.lightning.merge.timeCost}${talk.unit}`);
-                } else {
-                    if (!!talk.lightning) {
-                        console.log(`${time.militaryTimeTo12HrsClock(talk.scheduled)} ${talk.title} ${talk.lightning}`);
-                    } else {
-                        console.log(`${time.militaryTimeTo12HrsClock(talk.scheduled)} ${talk.title} ${talk.timeCost}${talk.unit}`);
-                    }
-                }
-            });
-
-            let limit = global.config.session.limit[session.finish];
-            if (limit != undefined) {
-                let lastTime = time.elapse(session.begin, session.timeUsed);
-                let finishBeginTime = '';
-
-                if (time.isExcess(lastTime, limit.noEarlier)) finishBeginTime = time.militaryTimeTo12HrsClock(lastTime);
-                else finishBeginTime = time.militaryTimeTo12HrsClock(limit.noEarlier);
-
-                console.log(`${finishBeginTime} ${session.finish}`);
-            } else {
-                console.log(`${time.militaryTimeTo12HrsClock(session.end)} ${session.finish}`);
-            }
-        });
-        console.log();
-    });
+    track.print(tracks);
 
 }).catch(err => {
     // Handling Errors
