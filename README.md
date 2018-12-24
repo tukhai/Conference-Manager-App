@@ -83,5 +83,14 @@ etc.
 
 <br><br>
 
-<h3>4/ WEB VERSION</h3>
+<h3>4/ ADDED TEST CASES</h3>
+a) source.txt (Default list of proposal talks)<br>
+b) source_test_case_1.txt (A lot of talks, excess to track 3)<br>
+c) source_test_case_2.txt (A lot of talks, excess to track 4)<br>
+d) source_test_case_3.txt (Less talks, only has track 1)<br>
+e) source_test_case_4.txt (Most of talk doesnt have proper time => only take the talk with proper time)<br>
+
+<br><br>
+
+<h3>5/ WEB VERSION</h3>
 To be continue..

@@ -1,0 +1,23 @@
+Dusting 120min
+Sweeping 50min
+Vacuuming 80min
+Washing dishes 60min
+Feeding pets 40min
+Doing laundry 150min
+Preparing meals 55min
+Cleaning bathrooms 100min
+Washing bedding 40min
+Mopping floors 70min
+Watering plants 10min
+Mowing the lawn 35min
+Weeding the garden 90min
+Taking out the trash 10min
+Wash the car 25min
+Tivoli Business Systems Manager SQL server jobs 60min
+Source/390 rediscoveries 90min
+Batch schedule download/process 100min
+Database backup and maintenance 50min
+Extend the data model 100min
+Configure the instance placement 45min
+Configure the Tivoli Enterprise Console rules to send events 45min
+Associate tasks and URLs with object types 25min

@@ -1,0 +1,21 @@
+Identify resources to be monitored 120min
+Define users and workflow 60min
+Identify event sources by resource type 60min
+Define the relationship between resources and business systems 30min
+Identify tasks and URLs by resource type 40min
+Define the server configuration 10min
+Define the server configurationm 60min
+Prepare for implementation 45min
+Identify the implementation team 20min
+Online shopping 50min
+Order the server hardware for production as well as test/quality assurance (QA) 45min
+Order console machines 30min
+Order prerequisite software 15min
+Identify the test LPAR 5min
+Identify production LPARs 5min
+Install production servers and prerequisite software 120min
+Install console machines and prerequisite software 20min
+Verify connectivity from production servers to the production LPAR, Tivoli Enterprise Console server, and console machines 40min
+Perform discovery, if required 20min
+Configure the event source 30min
+Verify the event flow 50min
